@@ -60,7 +60,7 @@ export default function Slide02Situation() {
         {/* Footer */}
         <div className="flex items-center justify-between pt-4 border-t border-slide-gray-200 mt-auto">
           <span className="text-sm text-slide-gray-400">Iconoclastic Capital Management • Fee-Only Fiduciary</span>
-          <span className="text-sm text-slide-gray-400">Referred by brother Mike Dubois (client since 2021)</span>
+          <span className="text-sm text-slide-gray-400">Referred by brother Mike (client since 2021)</span>
         </div>
       </div>
     </SlideLayout>
