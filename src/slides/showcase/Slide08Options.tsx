@@ -14,6 +14,7 @@ const optionA = [
 const optionB = [
   'Everything in the project scope, plus ongoing updates',
   'Proactive Roth conversion execution each year through age 73',
+  'We handle the TIAA rollover & precious metals liquidation for you',
   'Annual tax planning and coordination with your CPA',
   'Quarterly check-in calls and unlimited email access',
   'Continuous portfolio monitoring and rebalancing',
@@ -54,7 +55,7 @@ export default function Slide07Options() {
               </div>
             </div>
             <div className="px-8 py-4 bg-slide-gray-100 border-t border-slide-gray-200">
-              <p className="text-sm text-slide-gray-500 italic">Best for hands-on investors who prefer to implement independently.</p>
+              <p className="text-sm text-slide-gray-500 italic">You would handle TIAA rollovers, precious metals liquidation, and Roth conversions yourself.</p>
             </div>
           </div>
 
@@ -65,8 +66,13 @@ export default function Slide07Options() {
               <p className="text-base text-white/80">Ongoing annual relationship</p>
             </div>
             <div className="px-8 py-5 flex-1">
-              <p className="text-4xl font-bold mb-1" style={{ color: 'hsl(180, 38%, 30%)' }}>$7,000 <span className="text-xl font-normal text-slide-gray-400">first year</span></p>
-              <p className="text-sm text-slide-gray-400 mb-5">$4,500 annually thereafter • Or 0.90% AUM (planning fee waived)</p>
+              <p className="text-4xl font-bold mb-1" style={{ color: 'hsl(180, 38%, 30%)' }}>
+                <span className="line-through opacity-50">$6,000</span>{' '}
+                <span className="text-xl font-normal" style={{ color: 'hsl(145, 63%, 42%)' }}>Waived</span>{' '}
+                <span className="text-xl font-normal text-slide-gray-400">first year</span>
+              </p>
+              <p className="text-sm mb-1" style={{ color: 'hsl(145, 63%, 42%)' }}>✦ Planning fee waived with $1M+ under management</p>
+              <p className="text-sm text-slide-gray-400 mb-5">$4,500 annually thereafter • Or 0.90% AUM</p>
               <div className="space-y-3">
                 {optionB.map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
@@ -77,7 +83,7 @@ export default function Slide07Options() {
               </div>
             </div>
             <div className="px-8 py-4 border-t" style={{ background: 'hsl(174, 30%, 93%)', borderColor: 'hsl(174, 42%, 80%)' }}>
-              <p className="text-sm italic" style={{ color: 'hsl(180, 38%, 30%)' }}>Recommended — especially during the critical Roth conversion window through 2029.</p>
+              <p className="text-sm italic" style={{ color: 'hsl(180, 38%, 30%)' }}>Recommended for Tracy — hands-off execution during the critical Roth window, plus we manage the TIAA & metals transitions so you don't have to.</p>
             </div>
           </div>
         </div>

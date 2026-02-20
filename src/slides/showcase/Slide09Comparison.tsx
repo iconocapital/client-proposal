@@ -12,10 +12,12 @@ const rows = [
   { label: 'Insurance Assessment', a: true, b: true },
   { label: 'RightCapital Access', a: '12 months', b: 'Ongoing' },
   { label: 'Implementation Support', a: '90-day window', b: 'Year-round' },
-  { label: 'Annual Roth Conversion Updates', a: false, b: true },
-  { label: 'Ongoing Tax Planning', a: false, b: true },
+  { label: 'We Execute TIAA Rollover & Metals Liquidation', a: false, b: true },
+  { label: 'Annual Roth Conversion Execution', a: false, b: true },
+  { label: 'Ongoing Tax Planning w/ CPA Coordination', a: false, b: true },
   { label: 'Quarterly Review Calls', a: false, b: true },
-  { label: 'Portfolio Monitoring', a: false, b: true },
+  { label: 'Portfolio Monitoring & Rebalancing', a: false, b: true },
+  { label: 'Social Security & Pension Integration', a: false, b: true },
   { label: 'Unlimited Email Access', a: 'During engagement', b: 'Year-round' },
 ];
 
@@ -44,8 +46,8 @@ export default function Slide08Comparison() {
                   <span className="text-base font-normal text-slide-gray-400">$4,500</span>
                 </th>
                 <th className="text-center text-lg font-bold pb-3 w-[23%]" style={{ color: 'hsl(180, 38%, 30%)' }}>
-                  Essentials<br />
-                  <span className="text-base font-normal" style={{ color: 'hsl(174, 42%, 43%)' }}>$7,000 / $4,500</span>
+                  Guided<br />
+                  <span className="text-base font-normal" style={{ color: 'hsl(174, 42%, 43%)' }}><span className="line-through opacity-50">$6,000</span> Waived* / $4,500</span>
                 </th>
               </tr>
             </thead>
