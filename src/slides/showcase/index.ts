@@ -1,15 +1,21 @@
-import Slide01Intro from './Slide01Intro';
-import Slide02InteractiveChart from './Slide02InteractiveChart';
-import Slide03FeatureAdoption from './Slide03FeatureAdoption';
-import Slide04Interactive3D from './Slide03Interactive3D';
-import Slide05CalendarBooking from './Slide04CalendarBooking';
-import Slide06CTA from './Slide06CTA';
+import Slide01Title from './Slide01Title';
+import Slide02Situation from './Slide02Situation';
+import Slide03Findings1 from './Slide03Findings1';
+import Slide04Findings2 from './Slide04Findings2';
+import Slide05Findings3 from './Slide05Findings3';
+import Slide06Scope from './Slide06Scope';
+import Slide07Options from './Slide07Options';
+import Slide08Comparison from './Slide08Comparison';
+import Slide09NextSteps from './Slide09NextSteps';
 
 export const showcaseSlides = [
-  { component: Slide01Intro, name: 'Introduction', template: 'title' },
-  { component: Slide02InteractiveChart, name: 'Supply & Demand', template: 'chart-focus' },
-  { component: Slide03FeatureAdoption, name: 'Feature Adoption', template: 'interactive' },
-  { component: Slide04Interactive3D, name: '3D Interactive', template: 'interactive' },
-  { component: Slide05CalendarBooking, name: 'Calendar Booking', template: 'interactive' },
-  { component: Slide06CTA, name: 'Ready to Build?', template: 'cta' },
+  { component: Slide01Title, name: 'Engagement Proposal', template: 'title' },
+  { component: Slide02Situation, name: 'Your Situation', template: 'data-table' },
+  { component: Slide03Findings1, name: 'Portfolio & Metals', template: 'two-column' },
+  { component: Slide04Findings2, name: 'TIAA & Roth', template: 'two-column' },
+  { component: Slide05Findings3, name: 'Retirement & Insurance', template: 'two-column' },
+  { component: Slide06Scope, name: 'How We Can Help', template: 'three-up' },
+  { component: Slide07Options, name: 'Engagement Options', template: 'comparison' },
+  { component: Slide08Comparison, name: 'Side-by-Side', template: 'comparison' },
+  { component: Slide09NextSteps, name: 'Next Steps', template: 'cta' },
 ];

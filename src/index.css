@@ -13,14 +13,14 @@
      */
     
     /* === Brand Colors (Slide Deck) === */
-    /* Primary - Deep blue for authority and trust */
-    --slide-primary: 215 100% 20%;      /* #003366 - Deep Navy */
-    --slide-primary-light: 215 85% 35%; /* #1a5490 */
+    /* Primary - Iconoclastic Teal */
+    --slide-primary: 180 38% 30%;       /* #2F6B6B - Deep Teal */
+    --slide-primary-light: 180 32% 42%; /* #4D8A8A */
     
-    /* Accent - Vibrant blue for highlights */
-    --slide-accent: 207 90% 54%;        /* #2196F3 - Bright Blue */
-    --slide-accent-light: 207 90% 70%;  /* Lighter accent */
-    --slide-accent-muted: 207 40% 90%;  /* Very light accent bg */
+    /* Accent - Warm Teal for highlights */
+    --slide-accent: 174 42% 43%;        /* #3FA0A0 - Teal Accent */
+    --slide-accent-light: 174 42% 60%;  /* Lighter accent */
+    --slide-accent-muted: 174 30% 93%;  /* Very light teal bg */
     
     /* Semantic */
     --slide-success: 145 63% 42%;       /* #27AE60 - Green */

@@ -26,7 +26,7 @@ export function SlideLayout({ children, variant = 'default', className }: SlideL
       </div>
       
       {/* Bottom accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
+      <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(to right, hsl(180, 38%, 30%), hsl(174, 42%, 43%))' }} />
     </div>
   );
 }
