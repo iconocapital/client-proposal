@@ -35,7 +35,7 @@ export default function Slide07Options() {
           Both options deliver the same core planning work — choose the model that fits how you want to work going forward.
         </p>
 
-        <div className="flex-1 grid grid-cols-2 gap-10">
+        <div className="flex-1 grid grid-cols-2 gap-10 min-h-0 overflow-y-auto">
           {/* Option A */}
           <div className="rounded-xl border border-slide-gray-200 overflow-hidden flex flex-col">
             <div className="px-8 py-5" style={{ background: 'hsl(174, 30%, 93%)' }}>
