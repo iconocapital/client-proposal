@@ -145,16 +145,20 @@ export type ContentBlock =
     }
   | {
       type: 'schedule';
+      title?: string;
       rows: Array<{
-        period: string;
-        amount: string;
-        note: string;
+        period?: string;
+        year?: string;
+        amount?: string;
+        value?: string;
+        note?: string;
+        label?: string;
       }>;
     }
   | {
       type: 'progress-bars';
       heading?: string;
-      items: Array<{ label: string; value: number }>;
+      items: Array<{ label: string; value: number; color?: 'success' | 'warning' }>;
     }
   | {
       type: 'text';

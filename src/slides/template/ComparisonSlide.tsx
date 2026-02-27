@@ -19,6 +19,7 @@ interface Props {
 
 export function ComparisonSlide({ comparison, pricing, pageNumber }: Props) {
   const p = calculatePricing(pricing.investableAssets, pricing.projectFee, pricing.gwmTier, pricing.managedAUM);
+  const recommendProject = pricing.recommendedOption === 'project';
 
   return (
     <SlideLayout variant="default">
@@ -33,16 +34,27 @@ export function ComparisonSlide({ comparison, pricing, pageNumber }: Props) {
             <thead>
               <tr>
                 <th className="text-left text-lg font-semibold text-slide-gray-600 pb-3 w-[55%]"></th>
-                <th className="text-center text-lg font-bold text-slide-gray-900 pb-3 w-[22%]">
+                <th
+                  className={`text-center text-lg font-bold pb-3 w-[22%] ${recommendProject ? '' : 'text-slide-gray-900'}`}
+                  style={recommendProject ? { color: 'hsl(180, 38%, 30%)' } : undefined}
+                >
                   Project<br />
-                  <span className="text-base font-normal text-slide-gray-400">{p.projectFeeFormatted}</span>
+                  <span
+                    className={`text-base font-normal ${recommendProject ? '' : 'text-slide-gray-400'}`}
+                    style={recommendProject ? { color: 'hsl(174, 42%, 43%)' } : undefined}
+                  >
+                    {p.projectFeeFormatted}
+                  </span>
                 </th>
                 <th
-                  className="text-center text-lg font-bold pb-3 w-[23%]"
-                  style={{ color: 'hsl(180, 38%, 30%)' }}
+                  className={`text-center text-lg font-bold pb-3 w-[23%] ${!recommendProject ? '' : 'text-slide-gray-900'}`}
+                  style={!recommendProject ? { color: 'hsl(180, 38%, 30%)' } : undefined}
                 >
                   {p.gwmTierLabel.replace('GWM ', '')}<br />
-                  <span className="text-base font-normal" style={{ color: 'hsl(174, 42%, 43%)' }}>
+                  <span
+                    className={`text-base font-normal ${!recommendProject ? '' : 'text-slide-gray-400'}`}
+                    style={!recommendProject ? { color: 'hsl(174, 42%, 43%)' } : undefined}
+                  >
                     {p.gwmYear1Waived ? (
                       <>
                         <span className="line-through opacity-50">{p.gwmYear1FeeFormatted}</span> Waived* / {p.gwmYear2FeeFormatted}

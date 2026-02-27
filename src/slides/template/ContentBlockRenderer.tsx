@@ -89,13 +89,16 @@ export function ContentBlockRenderer({ block }: { block: ContentBlock }) {
     case 'schedule':
       return (
         <div className="space-y-2 mb-4">
+          {block.title && (
+            <p className="text-base font-medium text-slide-gray-600 mb-1">{block.title}</p>
+          )}
           {block.rows.map((row, i) => (
             <div key={i} className="flex items-center gap-3 px-3 py-2 rounded-lg bg-slide-gray-100">
-              <span className="text-sm font-bold text-slide-gray-600 w-16">{row.period}</span>
+              <span className="text-sm font-bold text-slide-gray-600 w-16">{row.period ?? row.year}</span>
               <span className="text-lg font-bold" style={{ color: 'hsl(145, 63%, 42%)' }}>
-                {row.amount}
+                {row.amount ?? row.value}
               </span>
-              <span className="text-sm text-slide-gray-400 ml-auto">{row.note}</span>
+              <span className="text-sm text-slide-gray-400 ml-auto">{row.note ?? row.label}</span>
             </div>
           ))}
         </div>
@@ -117,7 +120,9 @@ export function ContentBlockRenderer({ block }: { block: ContentBlock }) {
                     style={{
                       width: `${item.value}%`,
                       background:
-                        item.value >= 85
+                        item.color === 'success' ? 'hsl(145, 63%, 42%)'
+                        : item.color === 'warning' ? 'hsl(36, 100%, 50%)'
+                        : item.value >= 85
                           ? 'hsl(145, 63%, 42%)'
                           : item.value >= 80
                             ? 'hsl(36, 100%, 50%)'

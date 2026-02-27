@@ -3,51 +3,59 @@ import type { ProspectConfig } from '@/types/prospect';
 export const gaylordConfig: ProspectConfig = {
   prospect: {
     fullName: 'Jim & Robin Gaylord',
-    preparedDate: 'February 26, 2026',
+    preparedDate: 'February 27, 2026',
   },
   situation: {
     facts: [
       {
         label: 'Age / Retirement',
-        value: 'Both age 55, turning 56 in spring 2026. Robin retiring in 2026; Jim targeting 2028.',
+        value:
+          'Both turning 56 in spring 2026. Robin retiring in 2026; Jim targeting 2028.',
       },
       {
         label: 'Career',
-        value: 'Both long-tenured Wegmans employees — Jim (38 years) and Robin (33 years).',
+        value:
+          'Both long-tenured Wegmans employees — Jim (38 years) and Robin (33 years). Assets dominated by Wegmans 401(k)s.',
       },
       {
         label: 'Total Investable Assets',
-        value: '$2,723,728 across six accounts — heavily concentrated in Wegmans 401(k)s.',
+        value:
+          '$2,723,728 across six accounts — James 401(k) $1,892,245 · Robin 401(k) $674,073 · IRAs $45,307 · HSAs $35,749 · TOD accounts $76,355.',
       },
       {
         label: 'Net Worth',
-        value: '$3,115,834 including primary home ($667,665) and $277,559 in liabilities.',
+        value:
+          '$3,115,834 including primary home in Walworth, NY ($667,665) and $277,559 in liabilities.',
+      },
+      {
+        label: 'Annual Income (Pre-Retirement)',
+        value:
+          'Jim: $201,000/yr · Robin: $113,573/yr · Combined: $314,573/yr. Savings rate: 18.9% ($37,890/yr).',
       },
       {
         label: 'Annual Spending',
-        value: '$132,000/yr ($11,000/mo) in retirement — current lifestyle maintenance goal.',
-      },
-      {
-        label: 'Income (Pre-Retirement)',
-        value: 'Jim: $201,000/yr. Robin: $113,573/yr. Combined: $314,573/yr.',
+        value:
+          '$132,000/yr ($11,000/mo) used as a conservative baseline. Robin noted this is "worst case" — actual spending likely lower.',
       },
       {
         label: 'Social Security',
-        value: 'Jim: ~$64,800/yr. Robin: ~$24,000/yr. Claiming age TBD — not factored in early years.',
-      },
-      {
-        label: 'Housing',
-        value: 'Primary home in Walworth, NY. Mortgage balance: $268,715 at 6.625%.',
-      },
-      {
-        label: 'Healthcare (Pre-Medicare)',
         value:
-          'Significant gap: both retire before Medicare eligibility at 65. Private coverage costs modeled at $3,572/person/yr (likely conservative).',
+          'Jim: ~$64,800/yr · Robin: ~$24,000/yr. Optimal claiming strategy (delay to age 70) is the single largest plan improvement lever.',
       },
       {
         label: 'Tax Allocation',
         value:
-          '95.6% of assets in tax-deferred accounts ($2.6M). Only $76K taxable, $42K tax-free — major Roth conversion opportunity.',
+          '95.6% tax-deferred ($2.6M), 2.8% taxable ($76K), 1.6% tax-free ($42K). Roth conversion is the highest-value optimization available.',
+      },
+      {
+        label: 'Housing / Debt',
+        value:
+          'Mortgage: $268,715 at 6.625%. Proposed refinance to 15-yr at 5.375% included in plan. Credit card: $9,294 at 0%.',
+      },
+      {
+        label: 'Healthcare (Pre-Medicare)',
+        value:
+          'Robin faces 9-year coverage gap (56–65); Jim 7 years (58–65). ACA subsidy eligibility can be optimized through MAGI management.',
       },
     ],
     primaryGoal: {
@@ -56,154 +64,100 @@ export const gaylordConfig: ProspectConfig = {
     },
     riskProfile: {
       description:
-        'The Gaylords expressed comfort with market volatility and a long-term growth orientation, consistent with a moderate-to-moderately-aggressive risk profile. Their current portfolio is 60% equity / 40% fixed income — but 30.5% of the portfolio sits in cash, significantly muting returns and creating drag. The proposed Iconoclastic 70/30 target allocation aligns better with their long retirement horizon and growth needs.',
+        "The Gaylords expressed a long-term growth orientation and comfort with market cycles — Jim stated he's 'not trying to beat the market, just hang with it.' Their current allocation is technically 60/40, but 30.4% sits in cash and stable value, dramatically muting returns. The proposed Icono Growth 70/30 target better matches their 40+ year retirement horizon and the return assumptions needed to sustain their income plan.",
     },
   },
   allocation: {
     categories: [
-      { label: 'U.S. Equities', current: 51.0, target: 57.0 },
-      { label: 'International Equities', current: 6.2, target: 14.4 },
-      { label: 'Emerging Markets', current: 1.5, target: 3.4 },
-      { label: 'Real Estate', current: 1.0, target: 1.7 },
-      { label: 'U.S. Bonds', current: 7.6, target: 13.7 },
-      { label: 'International Bonds', current: 1.6, target: 5.5 },
-      { label: 'Cash', current: 30.5, target: 4.2 },
-      { label: 'Other', current: 0.6, target: 0.1 },
+      { label: 'U.S. Equities', current: 51.1, target: 43.0 },
+      { label: 'International Equities', current: 6.2, target: 17.9 },
+      { label: 'Emerging Markets', current: 1.5, target: 6.0 },
+      { label: 'Real Estate', current: 1.0, target: 3.0 },
+      { label: 'U.S. Bonds', current: 7.6, target: 23.6 },
+      { label: 'International Bonds', current: 1.6, target: 4.5 },
+      { label: 'Cash', current: 30.4, target: 2.0 },
+      { label: 'Other', current: 0.6, target: 0.0 },
     ],
     currentReturn: '7.2%',
-    targetReturn: '8.9%',
+    targetReturn: '8.6%',
     riskScore: 60,
-    targetLabel: 'Moderately Aggressive',
+    targetLabel: 'Growth',
     keyShiftsSummary:
-      'The biggest changes are deploying the excess 26% cash position into equities and bonds, nearly tripling international exposure from 6.2% to 14.4%, and increasing U.S. bonds from 7.6% to 13.7% — adding return without adding meaningful volatility.',
+      'The biggest moves are deploying 28% of the portfolio out of cash/stable value, nearly tripling international equity exposure from 6.2% to 17.9%, and building a proper bond allocation from 7.6% to 23.6% — creating a diversified, sequence-of-returns-resilient structure.',
   },
   findings: [
     {
       cards: [
         {
-          icon: 'Wallet',
+          icon: 'BarChart3',
           iconColor: 'warning',
-          title: 'Excess Cash Is Costing You Returns',
+          title: "The Current Plan Has a 42% Success Rate — Here's How We Fix It",
           narrative:
-            "Your current portfolio holds **$830,238 in cash** — roughly **30.5% of investable assets**. At a projected return of only **1.59%**, this idle capital is a significant drag. Deploying it toward the target allocation is projected to lift your portfolio's expected annual return from **7.2% to 8.9%** — a 170 basis point improvement that compounds dramatically over a 30+ year retirement.",
+            "Run as-is — retiring at 56 and 58, spending $11,000/month, current portfolio, no adjustments — the Gaylord plan succeeds in only **42 out of 100 simulated retirements**. That's a coin flip against a 40-year retirement. The proposed plan, applying five targeted strategies, lifts success to **93%** — a 51-point improvement driven by levers we can implement together.",
           contentBlocks: [
             {
-              type: 'metrics',
-              showArrows: true,
+              type: 'progress-bars',
               items: [
-                { label: 'Current Expected Return', value: '7.2%' },
-                { label: 'Target Expected Return', value: '8.9%' },
-              ],
-            },
-            {
-              type: 'metrics',
-              showArrows: true,
-              items: [
-                { label: 'Median Ending Portfolio (Current)', value: '$14,764,990' },
-                { label: 'Median Ending Portfolio (Proposed)', value: '$17,077,904' },
-              ],
-            },
-            {
-              type: 'callout',
-              text: "That's a **$2.3M improvement** in projected median lifetime wealth — generated primarily by putting your existing cash to work.",
-            },
-          ],
-          recommendation:
-            'Redeploy approximately $716,340 from cash into the target allocation — buying into U.S. equities, international, bonds, and emerging markets per the Icono 70/30 model.',
-        },
-        {
-          icon: 'PieChart',
-          iconColor: 'warning',
-          title: 'Portfolio Is Dangerously Under-Diversified Internationally',
-          narrative:
-            'International equities represent only **6.2%** of the current portfolio against a target of **14.4%** — and emerging markets sit at **1.5%** vs. a 3.4% target. This home-country bias leaves the portfolio overly dependent on U.S. market performance during what could be a highly volatile sequence-of-returns window as both of you transition into retirement.',
-          contentBlocks: [
-            {
-              type: 'key-values',
-              items: [
-                { label: 'International Equities — Current', value: '6.2%' },
-                { label: 'International Equities — Target', value: '14.4%' },
-                { label: 'Emerging Markets — Current', value: '1.5%' },
-                { label: 'Emerging Markets — Target', value: '3.4%' },
-                { label: 'Amount to Buy (International)', value: '$223,346' },
-                { label: 'Amount to Buy (Emerging Markets)', value: '$51,751' },
-              ],
-            },
-            {
-              type: 'callout',
-              text: "Jim mentioned awareness of sequence-of-returns risk — diversifying globally is one of the most effective tools to mitigate concentration risk in the critical early retirement years.",
-            },
-          ],
-          recommendation:
-            'Shift approximately $275,000 from cash into international developed and emerging market funds to achieve the target global diversification.',
-        },
-      ],
-    },
-    {
-      cards: [
-        {
-          icon: 'AlertTriangle',
-          iconColor: 'warning',
-          title: 'A Roth Conversion Gap That Will Cost You Later',
-          narrative:
-            "**95.6% of your $2.7M in investable assets sits in tax-deferred accounts** ($2.6M), with only $42,489 in tax-free accounts and $76,355 taxable. When RMDs kick in at age 73, forced withdrawals will push you into higher brackets — potentially triggering IRMAA Medicare surcharges and a steeper tax bill for your heirs. The window from Robin's retirement in 2026 through Social Security claiming is your **best conversion opportunity**, with income dropping significantly.",
-          contentBlocks: [
-            {
-              type: 'key-values',
-              items: [
-                { label: 'Tax-Deferred Assets', value: '$2,604,884 (95.6%)' },
-                { label: 'Tax-Free Assets (Roth)', value: '$42,489 (1.6%)' },
-                { label: 'Taxable Assets', value: '$76,355 (2.8%)' },
+                { label: 'Current Plan — Probability of Success', value: 42, color: 'warning' },
+                { label: 'Proposed Plan — Probability of Success', value: 93, color: 'success' },
               ],
             },
             {
               type: 'schedule',
+              title: 'The Five Levers — How Each One Moves the Needle',
               rows: [
-                { period: '2026', amount: '22–24%', note: 'Robin retires — income drops' },
-                { period: '2027', amount: '22%', note: 'Jim still working — partial opportunity' },
-                { period: '2028', amount: '22%', note: 'Jim retires — both on portfolio withdrawals' },
-                { period: '2029–35', amount: '22%', note: 'Pre-SS window — optimal conversion years' },
-                { period: '2036+', amount: '12%', note: 'Social Security begins — income rises' },
+                { year: 'Lever 1', label: 'Portfolio reallocation (deploy cash → Growth 70/30)', value: '+6% → 48%' },
+                { year: 'Lever 2', label: 'Social Security optimal claiming strategy', value: '+16% → 64%' },
+                { year: 'Lever 3', label: 'Mortgage refinance (15-yr at 5.375%)', value: '+13% → 77%' },
+                { year: 'Lever 4', label: 'Roth conversion tax strategy', value: '+10% → 87%' },
+                { year: 'Lever 5', label: 'Retirement spending guardrails', value: '+6% → 93%' },
               ],
             },
             {
               type: 'callout',
-              text: "Robin said it directly: 'It's the taxes and the Roth conversions — making sure our money is in the right place at the right time.' The plan as modeled shows **zero Roth conversions** — this is a significant missed opportunity.",
+              text: "None of these require Robin and Jim to work longer, spend less, or take on more risk than they're comfortable with. They require the right strategy — executed in the right sequence.",
             },
           ],
           recommendation:
-            "Design a multi-year Roth conversion ladder beginning in 2026, filling up the 22% bracket annually during the pre-Social Security window. Gene's tax analysis will quantify the lifetime tax savings.",
+            'Implement all five levers in a coordinated sequence: rebalance the portfolio immediately, execute the refinance before Robin retires, begin Roth conversions at Jim\'s retirement in 2028, and optimize Social Security timing alongside the drawdown plan.',
         },
         {
-          icon: 'Heart',
-          iconColor: 'warning',
-          title: 'Healthcare: The Biggest Wildcard Before Medicare',
+          icon: 'Receipt',
+          iconColor: 'teal',
+          title: 'Roth Conversion Strategy: $1.26M in Tax Savings',
           narrative:
-            "Robin retires at **56**, Jim at **58** — both face **7–9 years without employer-sponsored health coverage** before Medicare eligibility at 65. The Right Capital model uses **$3,572/person/year** for retirement healthcare costs, which likely understates ACA marketplace premiums significantly. A realistic budget for two adults in their late 50s on the open market could run **$20,000–$30,000/yr** depending on coverage level and income-based subsidy eligibility.",
+            "With **95.6% of $2.7M in tax-deferred accounts**, the Gaylords face escalating RMDs, rising IRMAA Medicare surcharges, and a concentrated future tax liability. The proposed Roth conversion strategy — filling the 22% bracket beginning at Jim's retirement in 2028 — generates **$1,264,801 less in lifetime federal taxes** and produces **$1,111,311 more in tax-adjusted ending wealth**. By 2050, the tax-deferred account is fully depleted; everything flows from Roth after that.",
           contentBlocks: [
             {
               type: 'metrics',
-              showArrows: false,
+              showArrows: true,
+              size: 'large',
               items: [
-                { label: 'RC Model (per person/yr)', value: '$3,572' },
-                { label: 'Realistic ACA Estimate (couple)', value: '$20K–$30K/yr' },
+                { label: 'Lifetime Tax Savings (Proposed vs. Reference)', value: '$1,264,801' },
+                { label: 'Additional Tax-Adjusted Ending Wealth', value: '$1,111,311' },
               ],
             },
             {
-              type: 'callout',
-              text: "Key nuance: ACA subsidies are income-based via MAGI. Strategic management of taxable income during the pre-Medicare years — including Roth conversions — could **qualify the Gaylords for significant premium tax credits**, dramatically reducing out-of-pocket healthcare costs.",
+              type: 'metrics',
+              showArrows: true,
+              items: [
+                { label: 'Ending Portfolio — Tax-Free % (Reference)', value: '62%' },
+                { label: 'Ending Portfolio — Tax-Free % (Proposed)', value: '100%' },
+              ],
             },
             {
-              type: 'key-values',
-              items: [
-                { label: 'Robin — Medicare Gap', value: '9 years (age 56–65)' },
-                { label: 'Jim — Medicare Gap', value: '7 years (age 58–65)' },
-                { label: 'LTC Modeled', value: '$75,504/yr for 2 years each' },
+              type: 'schedule',
+              title: 'Roth Conversion Plan (Starting 2028 at Jim\'s Retirement)',
+              rows: [
+                { year: '2028–2030', label: 'Conversions begin — early years, fill 22% bracket', value: '$6K–$25K/yr' },
+                { year: '2031–2039', label: 'Accelerating conversions through pre-SS window', value: '$26K–$74K/yr' },
+                { year: '2040–2049', label: 'Large conversions as SS income arrives', value: '$78K–$140K/yr' },
+                { year: '2050+', label: 'Tax-deferred fully depleted — 100% Roth withdrawals', value: '$0 deferred' },
               ],
             },
           ],
           recommendation:
-            'Model ACA subsidy scenarios based on projected retirement income. Coordinate healthcare coverage planning with the Roth conversion strategy to maximize subsidy eligibility and reduce lifetime premium costs.',
+            'Begin Roth conversions at Jim\'s retirement in 2028, filling the 22% bracket annually. Coordinate with ACA subsidy eligibility and IRMAA thresholds during the pre-Medicare years to avoid costly cliff effects.',
         },
       ],
     },
@@ -212,110 +166,124 @@ export const gaylordConfig: ProspectConfig = {
         {
           icon: 'Clock',
           iconColor: 'teal',
-          title: 'Social Security Timing Strategy',
+          title: 'Social Security: The Biggest Single Lever in the Plan',
           narrative:
-            "Jim's estimated Social Security benefit is **$64,800/yr** and Robin's is **$24,000/yr** — together **$88,800/yr** in inflation-adjusted income. The timing of when to claim is one of the highest-leverage decisions in retirement. Claiming early at 62 locks in a permanent reduction; waiting to 70 maximizes the lifetime benefit. For a couple with family longevity and a **100% Monte Carlo success rate**, delayed claiming is likely optimal — but the pre-SS withdrawal sequencing must be planned carefully.",
+            "Switching from current-strategy Social Security claiming to **optimal timing (age 70 for both)** is the highest-impact single move in the plan — adding **16 percentage points** of success probability. Jim's estimated **$64,800/yr** benefit grows roughly 8%/year beyond full retirement age; Robin's **$24,000/yr** similarly scales. Together, $88,800/yr in inflation-adjusted, guaranteed income anchors the later decades of retirement and reduces portfolio dependence when sequence-of-returns risk is highest.",
           contentBlocks: [
             {
               type: 'key-values',
               items: [
-                { label: "Jim's SS Benefit (full retirement age)", value: '$64,800/yr' },
-                { label: "Robin's SS Benefit (full retirement age)", value: '$24,000/yr' },
-                { label: 'Combined at FRA', value: '$88,800/yr' },
-                { label: 'Break-even vs. early claim (est.)', value: 'Age 78–80' },
+                { label: "Jim's SS — Full Retirement Age (67)", value: '~$64,800/yr' },
+                { label: "Jim's SS — Delayed to Age 70 (est.)", value: '~$81,100/yr' },
+                { label: "Robin's SS — Full Retirement Age (67)", value: '~$24,000/yr' },
+                { label: "Robin's SS — Delayed to Age 70 (est.)", value: '~$30,000/yr' },
+                { label: 'Plan probability improvement', value: '+16 percentage points' },
               ],
             },
             {
               type: 'callout',
-              text: "With a projected **100% plan success rate** and a median ending portfolio of **$17M**, the Gaylords have exceptional flexibility. The question isn't whether they can afford to wait — it's which claiming strategy optimizes lifetime income, survivor benefits, and tax efficiency.",
+              text: "The 9-year window between Robin's retirement (2026) and Jim's SS claim at 70 (2035) is the highest-leverage planning period in the entire retirement — it's when the Roth conversion, portfolio drawdown, ACA subsidy management, and SS delay strategy all have to work together.",
             },
           ],
           recommendation:
-            'Model multiple Social Security claiming scenarios (age 62, FRA, and 70 for Jim; coordinated strategy for Robin) and select the option that best balances income timing, IRMAA exposure, and survivor benefit protection.',
+            'Model both claiming at FRA and age-70 delayed strategies for Jim and Robin. Select the option that optimizes lifetime income, survivor benefit protection, and IRMAA exposure. Integrate with the Roth conversion schedule.',
         },
         {
-          icon: 'Scale',
+          icon: 'Home',
           iconColor: 'teal',
-          title: 'Plan Sustainability: The Numbers Are Strong',
+          title: 'Mortgage Refinance: Lock In Before Robin Retires',
           narrative:
-            "The Gaylord plan achieves a **100% Monte Carlo success rate** under both the current and proposed scenarios — meaning across all 1,000 simulated market conditions tested, they never run out of money. The proposed allocation improves the **median ending portfolio value by $2.3M** ($14.76M → $17.08M). The challenge now shifts from 'will we have enough?' to 'how do we optimize what we have — spending, taxes, legacy, and lifestyle?'",
+            "The current mortgage of **$268,715 at 6.625%** carries significant interest cost through retirement. Refinancing to a **15-year loan at 5.375%** — with ~$5,000 in closing costs — cuts the interest rate by 125 basis points, reduces the monthly payment from $2,994 to **$2,218**, and adds **13 percentage points to plan success**. The mortgage pays off around age 71 — right as RMDs begin — eliminating the largest fixed expense at the exact right moment.",
           contentBlocks: [
             {
-              type: 'progress-bars',
+              type: 'metrics',
+              showArrows: true,
               items: [
-                { label: 'Monte Carlo Success — Current Plan', value: 100 },
-                { label: 'Monte Carlo Success — Proposed Plan', value: 100 },
+                { label: 'Current Rate', value: '6.625% — 30-yr' },
+                { label: 'Proposed Rate', value: '5.375% — 15-yr' },
               ],
             },
             {
-              type: 'metrics',
-              size: 'large',
+              type: 'key-values',
               items: [
-                { label: 'Median Ending Value (Current)', value: '$14.8M' },
-                { label: 'Median Ending Value (Proposed)', value: '$17.1M' },
+                { label: 'Current Monthly Payment', value: '$2,994' },
+                { label: 'Proposed Monthly Payment', value: '$2,218' },
+                { label: 'Monthly Savings', value: '$776/mo' },
+                { label: 'Closing Costs (estimated)', value: '$5,000' },
+                { label: 'Plan probability improvement', value: '+13 percentage points' },
               ],
             },
             {
               type: 'callout',
-              text: "Jim said it perfectly: 'I don't want to die with $5 million in the bank.' The data suggests they're on track to leave far more than that — which makes spending optimization and 'Die With Zero' planning as important as portfolio construction.",
+              text: 'Refinancing with two salaries still on record — before Robin leaves — makes qualification easier. A recent Iconoclastic client secured this rate with closing costs already baked in.',
             },
           ],
           recommendation:
-            "Given the strength of the plan, shift focus toward optimizing the retirement experience: confirming a sustainable spending rate, building a year-by-year drawdown sequence, and stress-testing against worst-case scenarios (Great Recession, prolonged inflation) to give Jim and Robin the confidence to actually spend.",
+            'Begin the refinance process immediately, before Robin\'s retirement. Lock in the rate while both incomes are still qualifying. Target a 15-year at 5.375% or better.',
         },
       ],
     },
     {
       cards: [
         {
-          icon: 'Landmark',
-          iconColor: 'teal',
-          title: 'Mortgage Decision: Pay Off or Invest?',
+          icon: 'Wallet',
+          iconColor: 'warning',
+          title: 'Cash Drag: $828K Sitting on the Sidelines',
           narrative:
-            "The Gaylords carry a **$268,715 mortgage at 6.625%** — a meaningful fixed cost in retirement. With $11,000/month in planned spending, mortgage payments (~$2,994/mo) represent roughly **27% of the monthly budget**. At 6.625%, paying off the mortgage delivers a guaranteed after-tax return that's competitive with bonds. However, given a 100% plan success rate and strong portfolio returns, the math may favor maintaining the mortgage and keeping capital invested.",
+            "The current portfolio shows **30.4% in cash and stable value** — approximately **$828,174 earning ~1.59%/year**. Jack identified this as likely a stable-value bond fund misclassified by the system, but the economic reality is the same: nearly a third of the portfolio is dramatically underperforming. Redeploying into the Icono Growth 70/30 target raises the expected annual return from **7.2% to 8.6%** and drives the first 6 points of plan probability improvement.",
           contentBlocks: [
+            {
+              type: 'metrics',
+              showArrows: true,
+              items: [
+                { label: 'Current Expected Portfolio Return', value: '7.2%' },
+                { label: 'Target Expected Portfolio Return', value: '8.6%' },
+              ],
+            },
             {
               type: 'key-values',
               items: [
-                { label: 'Mortgage Balance', value: '$268,715' },
-                { label: 'Interest Rate', value: '6.625%' },
-                { label: 'Monthly Payment', value: '$2,994' },
-                { label: '% of Retirement Budget', value: '~27%' },
-                { label: 'Current Credit Card Balance', value: '$8,844 at 0%' },
+                { label: 'Cash / Stable Value to Redeploy', value: '$777,447 — Sell' },
+                { label: 'International Equities', value: '$320,286 — Buy' },
+                { label: 'U.S. Bonds', value: '$437,999 — Buy' },
+                { label: 'Emerging Markets', value: '$123,187 — Buy' },
+                { label: 'Real Estate', value: '$54,750 — Buy' },
+                { label: 'U.S. Equities (rebalance)', value: '$221,737 — Sell' },
               ],
             },
             {
               type: 'callout',
-              text: 'The credit card balance ($8,844) appears to be carried on a 0% promotional rate. This should be cleared before the promotional period expires — it presents no cost-of-carry concern as modeled.',
+              text: "Jack noted: international equities sit at ~10% when a healthy 2:1 US-to-international ratio implies they should be close to double that. With Western Europe entering its own bull cycle, now is the time to rebalance.",
             },
           ],
           recommendation:
-            'Model the payoff scenario vs. investing the equivalent lump sum, accounting for the tax deductibility of mortgage interest and the opportunity cost of capital. Provide a clear recommendation before Robin retires.',
+            'Execute the full rebalance to Icono Growth 70/30 — deploying cash into international equities, bonds, and alternatives while coordinating with tax-efficient asset location across taxable, tax-deferred, and Roth accounts.',
         },
         {
-          icon: 'Shield',
+          icon: 'Heart',
           iconColor: 'warning',
-          title: 'Insurance Review: Life & Long-Term Care',
+          title: 'Healthcare: 7–9 Years Without Employer Coverage',
           narrative:
-            "Jim carries **$850,000 in total life coverage** ($600K group + $250K term) and Robin carries **$590,000** ($340K group + $250K term). Group life coverage will end at retirement, reducing Jim to $250K and Robin to $250K. With a net worth of $3.1M and no dependents mentioned, life insurance needs shift post-retirement — but **long-term care risk** is significant. LTC is modeled at $75,504/yr for 2 years each; actual costs in Western NY may be higher, and duration risk is meaningful.",
+            "Robin retires at **56**, Jim at **58** — both face years without employer-sponsored health insurance before Medicare at 65. The Right Capital model uses **$3,572/person/year** for healthcare costs, which likely understates ACA marketplace premiums significantly. However, by managing MAGI strategically through the Roth conversion plan, the Gaylords may qualify for meaningful **ACA premium tax credits** — turning the healthcare gap into a planning opportunity rather than just a cost.",
           contentBlocks: [
             {
               type: 'key-values',
               items: [
-                { label: "Jim's Current Life Coverage", value: '$850,000 (group + term)' },
-                { label: "Robin's Current Life Coverage", value: '$590,000 (group + term)' },
-                { label: 'Coverage at Retirement (Jim)', value: '$250,000 (term only)' },
-                { label: 'Coverage at Retirement (Robin)', value: '$250,000 (term only)' },
-                { label: 'LTC Modeled (each)', value: '$75,504/yr × 2 years' },
+                { label: 'Robin — Medicare Gap', value: '9 years (age 56–65)' },
+                { label: 'Jim — Medicare Gap', value: '7 years (age 58–65)' },
+                { label: 'RC Modeled Healthcare (per person/yr)', value: '$3,572 — likely conservative' },
+                { label: 'Realistic ACA Estimate (couple)', value: '$20,000–$30,000/yr' },
+                { label: 'IRMAA Cliff (Medicare surcharge kicks in)', value: 'MAGI over $218K/yr' },
+                { label: 'LTC Modeled (each)', value: '$75,504/yr for 2 years' },
               ],
             },
             {
               type: 'callout',
-              text: 'With a robust portfolio, self-insuring for LTC is viable — but requires explicit planning. A hybrid LTC/life policy or a dedicated self-insurance reserve should be evaluated before retirement.',
+              text: 'Gene highlighted the IRMAA cliff: if MAGI exceeds $218,000 by even $1, Medicare premiums jump $74/month per person. Coordinating Roth conversions with distribution amounts to stay under these thresholds is a critical ongoing task.',
             },
           ],
           recommendation:
-            "Review term life coverage adequacy post-retirement given changed income needs, and model three LTC scenarios: self-insure, hybrid policy, and traditional LTC insurance. Decide before Robin's retirement date.",
+            'Model realistic ACA scenarios based on projected retirement MAGI. Optimize healthcare cost planning through strategic income management during the pre-Medicare years — and set explicit IRMAA guardrails once Medicare begins at 65.',
         },
       ],
     },
@@ -325,98 +293,90 @@ export const gaylordConfig: ProspectConfig = {
       icon: 'Target',
       title: 'Early Retirement Readiness Analysis',
       description:
-        "Full scenario modeling of Robin's 2026 retirement and Jim's 2028 retirement — confirming the plan works, stress-testing against sequence-of-returns risk, and building a year-by-year income roadmap.",
+        "Full scenario modeling of Robin's 2026 retirement and Jim's 2028 retirement — confirming the plan works, stress-testing against sequence-of-returns risk, and building a year-by-year income roadmap showing exactly where money comes from at every stage.",
     },
     {
       icon: 'RefreshCw',
-      title: 'Roth Conversion Strategy',
+      title: 'Roth Conversion Strategy & Execution',
       description:
-        'Design and implement a multi-year Roth conversion ladder using the pre-Social Security income gap. Includes annual bracket optimization and coordination with ACA subsidy thresholds.',
-      estimatedValue: '~$100K+ lifetime tax savings',
-    },
-    {
-      icon: 'Receipt',
-      title: 'Healthcare Coverage Planning',
-      description:
-        'Model ACA marketplace options, subsidy eligibility based on projected MAGI, and coordinate healthcare cost planning through age 65 for both Robin and Jim.',
-    },
-    {
-      icon: 'LineChart',
-      title: 'Portfolio Reallocation & Management',
-      description:
-        'Redeploy $716K+ in excess cash into the Icono 70/30 target allocation — increasing expected returns from 7.2% to 8.9% and improving international diversification.',
-      estimatedValue: '~$2.3M projected wealth improvement',
+        'Design and annually execute a multi-year Roth conversion ladder beginning at Jim\'s retirement — filling the 22% bracket each year and systematically converting the $2.6M tax-deferred portfolio to 100% tax-free over 20+ years.',
+      estimatedValue: '$1,264,801 in lifetime federal tax savings',
     },
     {
       icon: 'Clock',
       title: 'Social Security Optimization',
       description:
-        "Model multiple claiming scenarios for Jim ($64,800/yr) and Robin ($24,000/yr), optimizing for lifetime income, survivor benefits, and IRMAA impact.",
+        "Model and select the optimal claiming strategy for Jim ($64,800/yr) and Robin ($24,000/yr) — the single largest plan lever, contributing 16 percentage points of success probability improvement.",
+    },
+    {
+      icon: 'LineChart',
+      title: 'Portfolio Reallocation & Ongoing Management',
+      description:
+        'Redeploy $777K+ in excess cash into the Icono Growth 70/30 target — raising expected returns from 7.2% to 8.6%, adding international diversification, and maintaining the allocation through annual rebalancing.',
+    },
+    {
+      icon: 'Receipt',
+      title: 'Healthcare & ACA Coverage Planning',
+      description:
+        'Model ACA marketplace options, subsidy eligibility based on projected MAGI, and coordinate healthcare cost planning through age 65 — including IRMAA cliff management once Medicare begins.',
     },
     {
       icon: 'DollarSign',
-      title: 'Retirement Drawdown Sequencing',
+      title: 'Retirement Drawdown Sequencing & Spending Guardrails',
       description:
-        'Build a tax-efficient withdrawal sequence — coordinating taxable, tax-deferred, and tax-free accounts to minimize lifetime tax burden and IRMAA exposure through RMD age.',
+        'Build a tax-efficient withdrawal sequence across all account types and implement the Icono spending guardrails framework — giving Jim and Robin clear signals to flex spending and the confidence to actually spend in retirement.',
+    },
+    {
+      icon: 'Home',
+      title: 'Mortgage Refinance Analysis & Coordination',
+      description:
+        'Evaluate and coordinate a refinance to 15-year at 5.375% before Robin retires — leveraging both incomes for qualification while reducing the monthly payment by $776 and eliminating the mortgage by age 71.',
     },
     {
       icon: 'Shield',
       title: 'Insurance & Long-Term Care Review',
       description:
-        'Evaluate post-retirement life insurance needs, model LTC self-insurance vs. hybrid policy options, and confirm umbrella coverage is appropriate for net worth level.',
-    },
-    {
-      icon: 'Scale',
-      title: 'Spending Confidence & "Die With Zero" Planning',
-      description:
-        'With a 100% Monte Carlo success rate, shift focus to building spending confidence — aligning financial capacity with lifestyle goals and legacy intentions so Jim and Robin can actually enjoy their retirement.',
+        'Full pre-retirement insurance audit: confirm term life coverage adequacy post-group-life loss, identify premium savings opportunities, and model LTC self-insurance vs. hybrid policy options.',
     },
   ],
   pricing: {
     investableAssets: 2_723_728,
-    managedAUM: 60_700,
-    managedAccounts: [
-      { owner: 'Robin', account: 'Fidelity TOD', value: 15_280 },
-      { owner: 'Jim', account: 'Fidelity IRA', value: 23_487 },
-      { owner: 'Robin', account: 'Fidelity IRA', value: 21_933 },
-      { owner: 'Joint', account: 'New Retirement Planning TOD', value: 0, note: '$50K/yr contributions' },
-    ],
-    aumGrowthNote:
-      'Starting with consolidation of non-employer accounts — positions us to manage 401(k) rollovers as Jim and Robin retire, building the relationship with a strong planning foundation first.',
-    projectFee: 8_500,
+    projectFee: 5_000,
     gwmTier: 'essentials',
-    recommendedOption: 'gwm',
+    recommendedOption: 'project',
     recommendedReason:
-      "Jim and Robin need more than a one-time plan — they need ongoing implementation support through a multi-year Roth conversion strategy, annual tax optimization, and two staggered retirement dates. GWM Essentials gives them a dedicated team in their corner as Robin transitions this year and Jim follows in 2028, with the flexibility to step back once they're confident in their footing.",
+      'The Financial Planning Project delivers the complete analytical framework — retirement modeling, Roth conversion schedule, Social Security optimization, reallocation plan, and written recommendations — at a focused one-time cost. Jim and Robin can execute the plan themselves and return for ongoing support later if needed.',
     projectFooter:
-      'Ideal if you want a one-time professional second opinion with implementation support through 2026.',
+      'Recommended: delivers the full plan, written recommendations, and 90 days of implementation support.',
     gwmFooter:
-      'Recommended: covers both retirement transitions, ongoing Roth strategy, and annual plan reviews.',
+      'Best fit if you want ongoing hands-on support through both retirement transitions and annual Roth conversion execution.',
   },
   comparison: {
     rows: [
-      { label: 'Comprehensive Financial Plan', project: true, gwm: true },
-      { label: 'Right Capital Plan Build & Analysis', project: true, gwm: true },
+      { label: 'Comprehensive Financial Plan (Right Capital)', project: true, gwm: true },
       { label: 'Early Retirement Scenario Modeling', project: true, gwm: true },
-      { label: 'Asset Allocation Recommendation', project: true, gwm: true },
-      { label: 'Roth Conversion Analysis', project: true, gwm: true },
-      { label: 'Social Security Optimization', project: true, gwm: true },
-      { label: 'Healthcare Coverage Planning (Pre-Medicare)', project: true, gwm: true },
+      { label: 'Portfolio Reallocation Recommendation', project: true, gwm: true },
+      { label: 'Roth Conversion Strategy & Schedule', project: true, gwm: true },
+      { label: 'Social Security Optimization Analysis', project: true, gwm: true },
+      { label: 'Healthcare / ACA Coverage Planning', project: true, gwm: true },
+      { label: 'Mortgage Refinance Analysis', project: true, gwm: true },
       { label: 'Insurance & LTC Review', project: true, gwm: true },
       { label: 'Written Recommendations Report', project: true, gwm: true },
+      { label: 'Monarch Money Budgeting Subscription', project: true, gwm: true },
       { label: 'Implementation Support', project: '90 days', gwm: 'Ongoing' },
-      { label: 'Plan Review Meetings', project: '1–2 included', gwm: 'Quarterly' },
+      { label: 'Review Meetings', project: '2 included', gwm: 'Quarterly' },
       { label: 'Engagement Duration', project: 'One-time', gwm: 'Ongoing (no lock-in)' },
       { label: 'Annual Roth Conversion Execution', project: false, gwm: true },
       { label: 'Year-by-Year Tax Bracket Management', project: false, gwm: true },
-      { label: "Jim's Retirement Transition (2028)", project: false, gwm: true },
+      { label: "Jim's 2028 Retirement Transition", project: false, gwm: true },
       { label: 'Ongoing Portfolio Monitoring & Rebalancing', project: false, gwm: true },
+      { label: 'Retirement Spending Guardrails — Annual Review', project: false, gwm: true },
+      { label: 'IRMAA & Medicare Premium Management', project: false, gwm: true },
       { label: 'Ad Hoc Questions & Decision Support', project: false, gwm: true },
-      { label: 'Annual Plan Updates as Life Changes', project: false, gwm: true },
     ],
   },
   nextSteps: {
     closingQuote:
-      "Jim and Robin, you've done everything right — 38 years of disciplined saving and smart accumulation at Wegmans, a portfolio that's in genuinely strong shape, and enough self-awareness to know when it's time to bring in an expert for the handoff. The work ahead isn't about fixing problems — it's about optimizing what you've built. The Roth conversion window opening this year as Robin retires is one of the most valuable planning opportunities you'll ever have, and we want to make sure you capture it fully. Let's build the plan together and get you to the point where you can actually enjoy spending what you've worked your whole life to save.",
+      "Jim and Robin, 38 and 33 years at Wegmans — you've done the hard part. You showed up, saved consistently, and built a portfolio that gives you real options. What today showed us is that the plan as it stands has a 42% chance of success, but with five targeted moves we can get you to 93% — without working longer, spending less, or taking on more risk than you're comfortable with. Robin, you asked if you can retire this year. It's looking good. Let's build the plan and make it happen.",
   },
 };

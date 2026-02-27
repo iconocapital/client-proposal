@@ -39,6 +39,7 @@ export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
 
   const firstName = prospectName.split(' ')[0];
   const hasManagedAccounts = pricing.managedAccounts && pricing.managedAccounts.length > 0;
+  const recommendProject = pricing.recommendedOption === 'project';
 
   return (
     <SlideLayout variant="default">
@@ -54,10 +55,13 @@ export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
 
         <div className="flex-1 grid grid-cols-2 gap-10 min-h-0 overflow-y-auto">
           {/* Option A: Project */}
-          <div className="rounded-xl border border-slide-gray-200 overflow-hidden flex flex-col">
-            <div className="px-8 py-5" style={{ background: 'hsl(174, 30%, 93%)' }}>
-              <h3 className="text-2xl font-bold text-slide-gray-900">Option A: Financial Planning Project</h3>
-              <p className="text-base" style={{ color: 'hsl(174, 42%, 43%)' }}>One-time engagement • ~90 days</p>
+          <div
+            className={`rounded-xl overflow-hidden flex flex-col ${recommendProject ? 'border-2' : 'border border-slide-gray-200'}`}
+            style={recommendProject ? { borderColor: 'hsl(180, 38%, 30%)' } : undefined}
+          >
+            <div className="px-8 py-5" style={{ background: recommendProject ? 'hsl(180, 38%, 30%)' : 'hsl(174, 30%, 93%)' }}>
+              <h3 className={`text-2xl font-bold ${recommendProject ? 'text-white' : 'text-slide-gray-900'}`}>Option A: Financial Planning Project</h3>
+              <p className="text-base" style={{ color: recommendProject ? 'rgba(255,255,255,0.8)' : 'hsl(174, 42%, 43%)' }}>One-time engagement • ~90 days</p>
             </div>
             <div className="px-8 py-5 flex-1">
               <p className="text-4xl font-bold mb-1" style={{ color: 'hsl(180, 38%, 30%)' }}>
@@ -73,8 +77,14 @@ export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
                 ))}
               </div>
             </div>
-            <div className="px-8 py-4 bg-slide-gray-100 border-t border-slide-gray-200">
-              <p className="text-sm text-slide-gray-500 italic">
+            <div
+              className={recommendProject
+                ? 'px-8 py-4 border-t'
+                : 'px-8 py-4 bg-slide-gray-100 border-t border-slide-gray-200'
+              }
+              style={recommendProject ? { background: 'hsl(174, 30%, 93%)', borderColor: 'hsl(174, 42%, 80%)' } : undefined}
+            >
+              <p className={`text-sm italic ${recommendProject ? '' : 'text-slide-gray-500'}`} style={recommendProject ? { color: 'hsl(180, 38%, 30%)' } : undefined}>
                 {pricing.projectFooter ?? 'You would handle all account transitions, rollovers, and ongoing implementation yourself.'}
               </p>
             </div>
@@ -82,14 +92,14 @@ export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
 
           {/* Option B: GWM */}
           <div
-            className="rounded-xl border-2 overflow-hidden flex flex-col"
-            style={{ borderColor: 'hsl(180, 38%, 30%)' }}
+            className={`rounded-xl overflow-hidden flex flex-col ${!recommendProject ? 'border-2' : 'border border-slide-gray-200'}`}
+            style={!recommendProject ? { borderColor: 'hsl(180, 38%, 30%)' } : undefined}
           >
-            <div className="px-8 py-5" style={{ background: 'hsl(180, 38%, 30%)' }}>
-              <h3 className="text-2xl font-bold text-white">
+            <div className="px-8 py-5" style={{ background: !recommendProject ? 'hsl(180, 38%, 30%)' : 'hsl(174, 30%, 93%)' }}>
+              <h3 className={`text-2xl font-bold ${!recommendProject ? 'text-white' : 'text-slide-gray-900'}`}>
                 Option B: {p.gwmTierLabel}
               </h3>
-              <p className="text-base text-white/80">Ongoing annual relationship</p>
+              <p className="text-base" style={{ color: !recommendProject ? 'rgba(255,255,255,0.8)' : 'hsl(174, 42%, 43%)' }}>Ongoing annual relationship</p>
             </div>
             <div className="px-8 py-5 flex-1">
               {p.gwmYear1Waived ? (
@@ -122,10 +132,13 @@ export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
               </div>
             </div>
             <div
-              className="px-8 py-4 border-t"
-              style={{ background: 'hsl(174, 30%, 93%)', borderColor: 'hsl(174, 42%, 80%)' }}
+              className={!recommendProject
+                ? 'px-8 py-4 border-t'
+                : 'px-8 py-4 bg-slide-gray-100 border-t border-slide-gray-200'
+              }
+              style={!recommendProject ? { background: 'hsl(174, 30%, 93%)', borderColor: 'hsl(174, 42%, 80%)' } : undefined}
             >
-              <p className="text-sm italic" style={{ color: 'hsl(180, 38%, 30%)' }}>
+              <p className={`text-sm italic ${!recommendProject ? '' : 'text-slide-gray-500'}`} style={!recommendProject ? { color: 'hsl(180, 38%, 30%)' } : undefined}>
                 {pricing.gwmFooter ?? `Recommended for ${firstName} — ${pricing.recommendedReason}`}
               </p>
             </div>
