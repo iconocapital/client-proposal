@@ -1,0 +1,9 @@
+export { buildDeck } from './buildDeck';
+export { TitleSlide } from './TitleSlide';
+export { SituationSlide } from './SituationSlide';
+export { AllocationSlide } from './AllocationSlide';
+export { FindingsSlide } from './FindingsSlide';
+export { ScopeSlide } from './ScopeSlide';
+export { OptionsSlide } from './OptionsSlide';
+export { ComparisonSlide } from './ComparisonSlide';
+export { NextStepsSlide } from './NextStepsSlide';
