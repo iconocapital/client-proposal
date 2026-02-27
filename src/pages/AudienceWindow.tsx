@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { usePresenterSync } from '@/hooks/usePresenterSync';
-import { showcaseSlides } from '@/slides/showcase';
+import { buildDeck } from '@/slides/template';
+import { getProspect, DEFAULT_PROSPECT } from '@/prospects';
 import { ScaledSlide } from '@/components/slides/ScaledSlide';
 
 interface SlideInfo {
@@ -10,12 +12,16 @@ interface SlideInfo {
 
 // This component is rendered in the popup window for the audience
 export default function AudienceWindow() {
+  const [searchParams] = useSearchParams();
+  const prospectKey = searchParams.get('prospect') ?? DEFAULT_PROSPECT;
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [slides] = useState<SlideInfo[]>(() =>
-    showcaseSlides.map((s, i) => ({
+  const slides = React.useMemo<SlideInfo[]>(() =>
+    buildDeck(getProspect(prospectKey)).map((s, i) => ({
       id: `slide-${i}`,
       component: s.component,
-    }))
+    })),
+    [prospectKey]
   );
 
   const { sendPing, sendClose } = usePresenterSync(

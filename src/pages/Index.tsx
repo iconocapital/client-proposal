@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronsLeft, ChevronsRight } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Toolbar } from '@/components/layout/Toolbar';
 import { SlideCanvas } from '@/components/slides/SlideCanvas';
@@ -9,7 +10,8 @@ import { PresenterView } from '@/components/slides/PresenterView';
 import { PresenterNotesPanel } from '@/components/slides/PresenterNotesPanel';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { showcaseSlides } from '@/slides/showcase';
+import { buildDeck } from '@/slides/template';
+import { getProspect, prospects, DEFAULT_PROSPECT } from '@/prospects';
 
 interface SlideData {
   id: string;
@@ -20,6 +22,9 @@ interface SlideData {
 }
 
 export default function Index() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const prospectKey = searchParams.get('prospect') ?? DEFAULT_PROSPECT;
+
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [showGrid, setShowGrid] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
@@ -30,9 +35,12 @@ export default function Index() {
   const [isPresenterView, setIsPresenterView] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(256);
   const [isResizing, setIsResizing] = useState(false);
-  
-  // Derive slides from showcaseSlides with deterministic IDs (for presenter notes persistence)
-  const slides = React.useMemo<SlideData[]>(() => 
+
+  // Build slides from the active prospect config
+  const showcaseSlides = React.useMemo(() => buildDeck(getProspect(prospectKey)), [prospectKey]);
+
+  // Derive slides with deterministic IDs (for presenter notes persistence)
+  const slides = React.useMemo<SlideData[]>(() =>
     showcaseSlides.map((s) => ({
       id: `slide-${s.name.toLowerCase().replace(/\s+/g, '-')}`,
       component: s.component,
@@ -40,8 +48,13 @@ export default function Index() {
       isWIP: false,
       description: undefined,
     })),
-    []
+    [showcaseSlides]
   );
+
+  // Reset slide index when prospect changes
+  useEffect(() => {
+    setActiveSlideIndex(0);
+  }, [prospectKey]);
 
   // Get current slide ID for presenter notes
   const currentSlideId = slides[activeSlideIndex]?.id ?? null;
@@ -95,6 +108,12 @@ export default function Index() {
     <div className="h-screen flex flex-col bg-background">
       {/* Toolbar */}
       <Toolbar
+        prospectKey={prospectKey}
+        prospectOptions={Object.keys(prospects).map((k) => ({
+          key: k,
+          label: prospects[k].prospect.fullName,
+        }))}
+        onProspectChange={(key) => setSearchParams({ prospect: key })}
         showGrid={showGrid}
         onToggleGrid={() => {
           const newShowGrid = !showGrid;

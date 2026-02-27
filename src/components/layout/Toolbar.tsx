@@ -12,6 +12,9 @@ interface ToolbarProps {
   onToggleDarkMode?: () => void;
   onStartPresentation?: () => void;
   onStartPresenterView?: () => void;
+  prospectKey?: string;
+  prospectOptions?: { key: string; label: string }[];
+  onProspectChange?: (key: string) => void;
   className?: string;
 }
 
@@ -24,6 +27,9 @@ export function Toolbar({
   onToggleDarkMode,
   onStartPresentation,
   onStartPresenterView,
+  prospectKey,
+  prospectOptions,
+  onProspectChange,
   className
 }: ToolbarProps) {
   return (
@@ -32,6 +38,22 @@ export function Toolbar({
       <div className="flex items-center px-4">
         <span className="text-sm font-medium tracking-tight text-foreground">Iconoclastic Capital</span>
       </div>
+
+      {/* Prospect selector */}
+      {prospectOptions && prospectOptions.length > 1 && onProspectChange && (
+        <div className="flex items-center ml-2">
+          <span className="text-xs text-muted-foreground mr-1.5">Prospect:</span>
+          <select
+            value={prospectKey}
+            onChange={(e) => onProspectChange(e.target.value)}
+            className="text-xs h-7 rounded border border-input bg-background px-2 text-foreground focus:outline-none focus:ring-1 focus:ring-ring"
+          >
+            {prospectOptions.map((opt) => (
+              <option key={opt.key} value={opt.key}>{opt.label}</option>
+            ))}
+          </select>
+        </div>
+      )}
 
       {/* Spacer */}
       <div className="flex-1" />
