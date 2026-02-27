@@ -42,7 +42,7 @@ export function Toolbar({
       {/* Prospect selector */}
       {prospectOptions && prospectOptions.length > 1 && onProspectChange && (
         <div className="flex items-center ml-2">
-          <span className="text-xs text-muted-foreground mr-1.5">Prospect:</span>
+          <span className="text-xs text-muted-foreground mr-1.5">Viewing proposal for:</span>
           <select
             value={prospectKey}
             onChange={(e) => onProspectChange(e.target.value)}

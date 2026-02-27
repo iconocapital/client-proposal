@@ -1,13 +1,13 @@
 import React from 'react';
 import { SlideLayout } from '@/components/slides/SlideLayout';
-import { MessageCircle, FileText, Rocket } from 'lucide-react';
+import { MessageCircle, FileText, Rocket, Mail, Phone } from 'lucide-react';
 import type { ProspectConfig } from '@/types/prospect';
 
 const DEFAULT_STEPS = [
   {
     icon: MessageCircle,
     number: '1',
-    title: 'Reply or Call Us',
+    title: "Let's Talk — No Commitment Needed",
     desc: "Let us know which option feels right, or if you have questions. We're happy to hop on a quick call.",
   },
   {
@@ -41,11 +41,11 @@ export function NextStepsSlide({ nextSteps, prospectName, pageNumber }: Props) {
         </h2>
         <div className="slide-divider mb-8" />
 
-        <p className="text-xl text-slide-gray-500 mb-12 max-w-[1200px]">
+        <p className="text-xl text-slide-gray-500 mb-10 max-w-[1200px]">
           Take your time reviewing this proposal. There's no expiration date and no pressure. When you're ready:
         </p>
 
-        <div className="flex gap-10 mb-16">
+        <div className="flex gap-10 mb-10">
           {DEFAULT_STEPS.map((step, i) => (
             <div key={i} className="flex-1 flex flex-col items-start">
               <div className="flex items-center gap-4 mb-4">
@@ -65,12 +65,32 @@ export function NextStepsSlide({ nextSteps, prospectName, pageNumber }: Props) {
           ))}
         </div>
 
+        {/* CTA Buttons */}
+        <div className="flex items-center gap-6 mb-10">
+          <a
+            href="mailto:team@iconocapital.com?subject=Engagement%20Proposal%20Follow-Up"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-xl font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ background: 'hsl(180, 38%, 30%)' }}
+          >
+            <Mail className="w-5 h-5" />
+            Email Chris
+          </a>
+          <a
+            href="tel:+15858137197"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-xl font-semibold transition-opacity hover:opacity-90 border-2"
+            style={{ color: 'hsl(180, 38%, 30%)', borderColor: 'hsl(180, 38%, 30%)' }}
+          >
+            <Phone className="w-5 h-5" />
+            Call 585-813-7197
+          </a>
+        </div>
+
         {/* Closing */}
-        <div className="border-t border-slide-gray-200 pt-8 mt-auto">
+        <div className="border-t border-slide-gray-200 pt-6 mt-auto">
           <p className="text-xl text-slide-gray-600 italic max-w-[1200px]">
             "{nextSteps.closingQuote}"
           </p>
-          <p className="text-lg font-semibold mt-4" style={{ color: 'hsl(180, 38%, 30%)' }}>
+          <p className="text-lg font-semibold mt-3" style={{ color: 'hsl(180, 38%, 30%)' }}>
             Chris Haigh, CFP® —{' '}
             <span className="font-normal text-slide-gray-500">CEO, Iconoclastic Capital Management</span>
           </p>

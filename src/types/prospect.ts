@@ -101,6 +101,8 @@ export interface ProspectConfig {
 // ============================================================
 
 export interface FindingsSlide {
+  /** Custom slide title — replaces the generic "Key Findings" heading */
+  slideTitle?: string;
   /** Each findings slide displays exactly 2 cards side by side */
   cards: [FindingCard, FindingCard];
 }

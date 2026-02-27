@@ -62,15 +62,16 @@ function FindingCardComponent({ card }: { card: FindingCard }) {
 
 interface Props {
   cards: [FindingCard, FindingCard];
+  slideTitle?: string;
   pageNumber: number;
 }
 
-export function FindingsSlide({ cards, pageNumber }: Props) {
+export function FindingsSlide({ cards, slideTitle, pageNumber }: Props) {
   return (
     <SlideLayout variant="default">
       <div className="flex flex-col h-full px-20 py-16">
         <h2 className="text-5xl font-bold tracking-tight mb-2" style={{ color: 'hsl(180, 38%, 30%)' }}>
-          Key Findings
+          {slideTitle ?? 'Key Findings'}
         </h2>
         <div className="slide-divider mb-8" />
 

@@ -79,13 +79,14 @@ export const gaylordConfig: ProspectConfig = {
   },
   findings: [
     {
+      slideTitle: 'Your Cash Is Sitting Out',
       cards: [
         {
           icon: 'Wallet',
           iconColor: 'warning',
           title: 'Excess Cash Is Costing You Returns',
           narrative:
-            "Your current portfolio holds **$830,238 in cash** — roughly **30.5% of investable assets**. At a projected return of only **1.59%**, this idle capital is a significant drag. Deploying it toward the target allocation is projected to lift your portfolio's expected annual return from **7.2% to 8.9%** — a 170 basis point improvement that compounds dramatically over a 30+ year retirement.",
+            "Your current portfolio holds **$830,238 in cash** — roughly 30.5% of investable assets. At a projected return of only 1.59%, this idle capital is a significant drag. Deploying it toward the target allocation is projected to lift your portfolio's expected annual return from 7.2% to 8.9% — a 170 basis point improvement that compounds dramatically over a 30+ year retirement.",
           contentBlocks: [
             {
               type: 'metrics',
@@ -116,7 +117,7 @@ export const gaylordConfig: ProspectConfig = {
           iconColor: 'warning',
           title: 'Portfolio Is Dangerously Under-Diversified Internationally',
           narrative:
-            'International equities represent only **6.2%** of the current portfolio against a target of **14.4%** — and emerging markets sit at **1.5%** vs. a 3.4% target. This home-country bias leaves the portfolio overly dependent on U.S. market performance during what could be a highly volatile sequence-of-returns window as both of you transition into retirement.',
+            'International equities represent only **6.2% of the current portfolio** against a target of 14.4% — and emerging markets sit at 1.5% vs. a 3.4% target. This home-country bias leaves the portfolio overly dependent on U.S. market performance during what could be a highly volatile sequence-of-returns window as both of you transition into retirement.',
           contentBlocks: [
             {
               type: 'key-values',
@@ -140,13 +141,14 @@ export const gaylordConfig: ProspectConfig = {
       ],
     },
     {
+      slideTitle: 'Your Tax Situation Has a Window',
       cards: [
         {
           icon: 'AlertTriangle',
           iconColor: 'warning',
           title: 'A Roth Conversion Gap That Will Cost You Later',
           narrative:
-            "**95.6% of your $2.7M in investable assets sits in tax-deferred accounts** ($2.6M), with only $42,489 in tax-free accounts and $76,355 taxable. When RMDs kick in at age 73, forced withdrawals will push you into higher brackets — potentially triggering IRMAA Medicare surcharges and a steeper tax bill for your heirs. The window from Robin's retirement in 2026 through Social Security claiming is your **best conversion opportunity**, with income dropping significantly.",
+            "**95.6% of your $2.7M sits in tax-deferred accounts** ($2.6M), with only $42,489 in tax-free accounts and $76,355 taxable. When RMDs kick in at age 73, forced withdrawals will push you into higher brackets — potentially triggering IRMAA Medicare surcharges and a steeper tax bill for your heirs. The window from Robin's retirement in 2026 through Social Security claiming is your best conversion opportunity, with income dropping significantly.",
           contentBlocks: [
             {
               type: 'key-values',
@@ -179,7 +181,7 @@ export const gaylordConfig: ProspectConfig = {
           iconColor: 'warning',
           title: 'Healthcare: The Biggest Wildcard Before Medicare',
           narrative:
-            "Robin retires at **56**, Jim at **58** — both face **7–9 years without employer-sponsored health coverage** before Medicare eligibility at 65. The Right Capital model uses **$3,572/person/year** for retirement healthcare costs, which likely understates ACA marketplace premiums significantly. A realistic budget for two adults in their late 50s on the open market could run **$20,000–$30,000/yr** depending on coverage level and income-based subsidy eligibility.",
+            "Robin retires at 56, Jim at 58 — both face **7–9 years without employer-sponsored health coverage** before Medicare eligibility at 65. The Right Capital model uses $3,572/person/year for retirement healthcare costs, which likely understates ACA marketplace premiums significantly. A realistic budget for two adults in their late 50s on the open market could run $20,000–$30,000/yr depending on coverage level and income-based subsidy eligibility.",
           contentBlocks: [
             {
               type: 'metrics',
@@ -208,13 +210,14 @@ export const gaylordConfig: ProspectConfig = {
       ],
     },
     {
+      slideTitle: 'The Numbers Are Strong — But Unoptimized',
       cards: [
         {
           icon: 'Clock',
           iconColor: 'teal',
           title: 'Social Security Timing Strategy',
           narrative:
-            "Jim's estimated Social Security benefit is **$64,800/yr** and Robin's is **$24,000/yr** — together **$88,800/yr** in inflation-adjusted income. The timing of when to claim is one of the highest-leverage decisions in retirement. Claiming early at 62 locks in a permanent reduction; waiting to 70 maximizes the lifetime benefit. For a couple with family longevity and a **100% Monte Carlo success rate**, delayed claiming is likely optimal — but the pre-SS withdrawal sequencing must be planned carefully.",
+            "Jim's estimated Social Security benefit is $64,800/yr and Robin's is $24,000/yr — together **$88,800/yr in inflation-adjusted income**. The timing of when to claim is one of the highest-leverage decisions in retirement. Claiming early at 62 locks in a permanent reduction; waiting to 70 maximizes the lifetime benefit. For a couple with family longevity and a 100% Monte Carlo success rate, delayed claiming is likely optimal — but the pre-SS withdrawal sequencing must be planned carefully.",
           contentBlocks: [
             {
               type: 'key-values',
@@ -238,7 +241,7 @@ export const gaylordConfig: ProspectConfig = {
           iconColor: 'teal',
           title: 'Plan Sustainability: The Numbers Are Strong',
           narrative:
-            "The Gaylord plan achieves a **100% Monte Carlo success rate** under both the current and proposed scenarios — meaning across all 1,000 simulated market conditions tested, they never run out of money. The proposed allocation improves the **median ending portfolio value by $2.3M** ($14.76M → $17.08M). The challenge now shifts from 'will we have enough?' to 'how do we optimize what we have — spending, taxes, legacy, and lifestyle?'",
+            "The Gaylord plan achieves a **100% Monte Carlo success rate** under both the current and proposed scenarios — meaning across all 1,000 simulated market conditions tested, they never run out of money. The proposed allocation improves the median ending portfolio value by $2.3M ($14.76M → $17.08M). The challenge now shifts from 'will we have enough?' to 'how do we optimize what we have — spending, taxes, legacy, and lifestyle?'",
           contentBlocks: [
             {
               type: 'progress-bars',
@@ -266,13 +269,14 @@ export const gaylordConfig: ProspectConfig = {
       ],
     },
     {
+      slideTitle: 'Decisions to Make Before Robin Retires',
       cards: [
         {
           icon: 'Landmark',
           iconColor: 'teal',
           title: 'Mortgage Decision: Pay Off or Invest?',
           narrative:
-            "The Gaylords carry a **$268,715 mortgage at 6.625%** — a meaningful fixed cost in retirement. With $11,000/month in planned spending, mortgage payments (~$2,994/mo) represent roughly **27% of the monthly budget**. At 6.625%, paying off the mortgage delivers a guaranteed after-tax return that's competitive with bonds. However, given a 100% plan success rate and strong portfolio returns, the math may favor maintaining the mortgage and keeping capital invested.",
+            "The Gaylords carry a **$268,715 mortgage at 6.625%** — a meaningful fixed cost in retirement. With $11,000/month in planned spending, mortgage payments (~$2,994/mo) represent roughly 27% of the monthly budget. At 6.625%, paying off the mortgage delivers a guaranteed after-tax return that's competitive with bonds. However, given a 100% plan success rate and strong portfolio returns, the math may favor maintaining the mortgage and keeping capital invested.",
           contentBlocks: [
             {
               type: 'key-values',
@@ -297,7 +301,7 @@ export const gaylordConfig: ProspectConfig = {
           iconColor: 'warning',
           title: 'Insurance Review: Life & Long-Term Care',
           narrative:
-            "Jim carries **$850,000 in total life coverage** ($600K group + $250K term) and Robin carries **$590,000** ($340K group + $250K term). Group life coverage will end at retirement, reducing Jim to $250K and Robin to $250K. With a net worth of $3.1M and no dependents mentioned, life insurance needs shift post-retirement — but **long-term care risk** is significant. LTC is modeled at $75,504/yr for 2 years each; actual costs in Western NY may be higher, and duration risk is meaningful.",
+            "Jim carries $850,000 in total life coverage ($600K group + $250K term) and Robin carries $590,000 ($340K group + $250K term). Group life coverage will end at retirement, reducing Jim to $250K and Robin to $250K. With a net worth of $3.1M and no dependents mentioned, life insurance needs shift post-retirement — but **long-term care risk is significant**. LTC is modeled at $75,504/yr for 2 years each; actual costs in Western NY may be higher, and duration risk is meaningful.",
           contentBlocks: [
             {
               type: 'key-values',
@@ -367,9 +371,9 @@ export const gaylordConfig: ProspectConfig = {
     },
     {
       icon: 'Scale',
-      title: 'Spending Confidence & "Die With Zero" Planning',
+      title: 'Spend With Confidence',
       description:
-        'With a 100% Monte Carlo success rate, shift focus to building spending confidence — aligning financial capacity with lifestyle goals and legacy intentions so Jim and Robin can actually enjoy their retirement.',
+        'With a 100% Monte Carlo success rate, shift focus to building spending confidence — aligning financial capacity with lifestyle goals and legacy intentions so Jim and Robin can actually enjoy their retirement. (Die With Zero framework)',
     },
   ],
   pricing: {
