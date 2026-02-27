@@ -374,6 +374,15 @@ export const gaylordConfig: ProspectConfig = {
   ],
   pricing: {
     investableAssets: 2_723_728,
+    managedAUM: 60_700,
+    managedAccounts: [
+      { owner: 'Robin', account: 'Fidelity TOD', value: 15_280 },
+      { owner: 'Jim', account: 'Fidelity IRA', value: 23_487 },
+      { owner: 'Robin', account: 'Fidelity IRA', value: 21_933 },
+      { owner: 'Joint', account: 'New Retirement Planning TOD', value: 0, note: '$50K/yr contributions' },
+    ],
+    aumGrowthNote:
+      'Starting with consolidation of non-employer accounts — positions us to manage 401(k) rollovers as Jim and Robin retire, building the relationship with a strong planning foundation first.',
     projectFee: 8_500,
     gwmTier: 'essentials',
     recommendedOption: 'gwm',

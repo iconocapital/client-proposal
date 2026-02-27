@@ -46,6 +46,11 @@ interface ProspectConfig {
 
   pricing: {
     investableAssets: number;
+    managedAUM?: number;                          // Assets Icono actually manages (drives fee rules)
+    managedAccounts?: Array<{                     // Accounts being consolidated
+      owner: string; account: string; value: number; note?: string;
+    }>;
+    aumGrowthNote?: string;                       // Future AUM growth narrative
     projectFee: number;                           // $5,000-$10,000
     gwmTier: 'essentials' | 'premier';
     recommendedOption: 'project' | 'gwm';
@@ -134,9 +139,19 @@ Each slide has exactly 2 finding cards side-by-side. Identify the most impactful
 | Year 2+ | N/A | $4,500 | $7,000 |
 | AUM Fee | N/A | 0.90% under $2M | 0.90% under $2M |
 
-**Fee modifications based on investable assets:**
-- **AUM ≥ $1M**: Year 1 planning fee is **waived** — client only pays the one-time onboarding fee
-- **AUM ≥ $2M**: AUM fee drops to **0.65%** (from 0.90%)
+**CRITICAL: Managed AUM ≠ Total Investable Assets**
+
+Fee rules are based on **managed AUM** — the assets Iconoclastic actually manages — NOT total investable assets. A prospect may have $2.7M total but only consolidate $60K initially.
+
+- **Managed AUM ≥ $1M**: Year 1 planning fee is **waived** — client only pays the one-time onboarding fee
+- **Managed AUM ≥ $2M**: AUM fee drops to **0.65%** (from 0.90%)
+
+Always specify `managedAUM` and `managedAccounts` in the config:
+- `managedAUM`: Sum of account values being consolidated to Iconoclastic
+- `managedAccounts`: List of specific accounts with owner, name, value, and optional notes
+- `aumGrowthNote`: Narrative about future growth (e.g., "401(k) rollovers at retirement will bring AUM to $X")
+
+If the recommendation is full consolidation (all assets to Iconoclastic), you can omit `managedAUM` — it defaults to `investableAssets`.
 
 **Choosing project fee:** Base on scope complexity:
 - Simple (single focus area): $5,000

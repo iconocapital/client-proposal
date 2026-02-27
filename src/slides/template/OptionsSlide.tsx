@@ -2,7 +2,7 @@ import React from 'react';
 import { SlideLayout } from '@/components/slides/SlideLayout';
 import { Check } from 'lucide-react';
 import { SlideFooter } from './SlideFooter';
-import { calculatePricing } from '@/lib/pricing';
+import { calculatePricing, formatCurrency } from '@/lib/pricing';
 import type { ProspectConfig } from '@/types/prospect';
 
 const DEFAULT_PROJECT_FEATURES = [
@@ -30,7 +30,7 @@ interface Props {
 }
 
 export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
-  const p = calculatePricing(pricing.investableAssets, pricing.projectFee, pricing.gwmTier);
+  const p = calculatePricing(pricing.investableAssets, pricing.projectFee, pricing.gwmTier, pricing.managedAUM);
   const projectFeatures = pricing.projectFeatures ?? DEFAULT_PROJECT_FEATURES;
   const gwmFeatures = pricing.gwmFeatures ?? [
     ...DEFAULT_GWM_FEATURES,
@@ -38,6 +38,7 @@ export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
   ];
 
   const firstName = prospectName.split(' ')[0];
+  const hasManagedAccounts = pricing.managedAccounts && pricing.managedAccounts.length > 0;
 
   return (
     <SlideLayout variant="default">
@@ -130,6 +131,38 @@ export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Managed Accounts Breakdown */}
+        {hasManagedAccounts && (
+          <div className="mt-4 p-4 rounded-lg border border-slide-gray-200 bg-slide-gray-100">
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-sm font-semibold text-slide-gray-600">
+                Accounts to Consolidate with Iconoclastic
+              </p>
+              <p className="text-sm font-bold" style={{ color: 'hsl(180, 38%, 30%)' }}>
+                Starting AUM: {p.managedAUMFormatted}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-x-8 gap-y-1">
+              {pricing.managedAccounts!.map((acct, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm">
+                  <span className="text-slide-gray-500">{acct.owner} — {acct.account}:</span>
+                  <span className="font-semibold text-slide-gray-900 tabular-nums">
+                    {formatCurrency(acct.value)}
+                  </span>
+                  {acct.note && (
+                    <span className="text-slide-gray-400">({acct.note})</span>
+                  )}
+                </div>
+              ))}
+            </div>
+            {pricing.aumGrowthNote && (
+              <p className="text-xs mt-2 italic" style={{ color: 'hsl(174, 42%, 43%)' }}>
+                {pricing.aumGrowthNote}
+              </p>
+            )}
+          </div>
+        )}
 
         <SlideFooter pageNumber={pageNumber} />
       </div>

@@ -18,7 +18,7 @@ interface Props {
 }
 
 export function ComparisonSlide({ comparison, pricing, pageNumber }: Props) {
-  const p = calculatePricing(pricing.investableAssets, pricing.projectFee, pricing.gwmTier);
+  const p = calculatePricing(pricing.investableAssets, pricing.projectFee, pricing.gwmTier, pricing.managedAUM);
 
   return (
     <SlideLayout variant="default">

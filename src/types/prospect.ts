@@ -52,8 +52,20 @@ export interface ProspectConfig {
 
   /** Pricing configuration */
   pricing: {
-    /** Total investable assets — drives fee waiver and AUM tier rules */
+    /** Total investable assets (for context/display) */
     investableAssets: number;
+    /**
+     * Assets actually under Iconoclastic management.
+     * THIS drives the fee waiver and AUM tier rules:
+     *   - managedAUM ≥ $1M → Year 1 planning fee waived
+     *   - managedAUM ≥ $2M → AUM fee drops to 0.65%
+     * If omitted, defaults to investableAssets (full consolidation).
+     */
+    managedAUM?: number;
+    /** Accounts being consolidated to Iconoclastic management */
+    managedAccounts?: ManagedAccount[];
+    /** Narrative about future AUM growth potential (e.g., 401k rollovers at retirement) */
+    aumGrowthNote?: string;
     /** One-time project fee ($5,000–$10,000 based on scope) */
     projectFee: number;
     /** Which GWM tier to present alongside the project option */
@@ -156,6 +168,17 @@ export interface ServiceItem {
   description: string;
   /** Estimated dollar value this service delivers (e.g., "$243K tax savings") */
   estimatedValue?: string;
+}
+
+export interface ManagedAccount {
+  /** Account owner name */
+  owner: string;
+  /** Account type/name */
+  account: string;
+  /** Current value */
+  value: number;
+  /** Optional note (e.g., "with $50K/yr contributions") */
+  note?: string;
 }
 
 export interface ComparisonRow {

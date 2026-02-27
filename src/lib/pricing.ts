@@ -9,8 +9,12 @@
 // GWM PREMIER:         $9,000 Year 1  /  $7,000 Year 2+
 //
 // AUM Fee:             0.90% under $2M  /  0.65% at $2M+
-// Fee Waiver:          AUM ≥ $1M → Year 1 planning fee waived
+// Fee Waiver:          Managed AUM ≥ $1M → Year 1 planning fee waived
 //                      (only the one-time onboarding fee applies)
+//
+// IMPORTANT: Fee rules are based on MANAGED AUM (assets Iconoclastic
+// actually manages), NOT total investable assets. A prospect may have
+// $2.7M total but only consolidate $60K initially.
 // ============================================================
 
 export interface PricingResult {
@@ -30,8 +34,10 @@ export interface PricingResult {
   // AUM
   aumFeePercent: number;
   aumFeeNote: string;
+  managedAUM: number;
+  managedAUMFormatted: string;
 
-  // Investable assets
+  // Investable assets (total)
   investableAssets: number;
   investableAssetsFormatted: string;
 }
@@ -41,7 +47,7 @@ const TIER_CONFIG = {
   premier: { year1: 9_000, year2: 7_000, label: 'GWM Premier' },
 } as const;
 
-function formatCurrency(amount: number): string {
+export function formatCurrency(amount: number): string {
   return `$${amount.toLocaleString('en-US')}`;
 }
 
@@ -49,9 +55,12 @@ export function calculatePricing(
   investableAssets: number,
   projectFee: number,
   gwmTier: 'essentials' | 'premier',
+  /** Assets Iconoclastic actually manages. Defaults to investableAssets if omitted. */
+  managedAUM?: number,
 ): PricingResult {
-  const isOver1M = investableAssets >= 1_000_000;
-  const isOver2M = investableAssets >= 2_000_000;
+  const aum = managedAUM ?? investableAssets;
+  const isOver1M = aum >= 1_000_000;
+  const isOver2M = aum >= 2_000_000;
   const tier = TIER_CONFIG[gwmTier];
   const aumFee = isOver2M ? 0.65 : 0.90;
 
@@ -71,6 +80,9 @@ export function calculatePricing(
     aumFeeNote: isOver2M
       ? `${aumFee}% AUM (reduced rate for $2M+)`
       : `${aumFee}% AUM`,
+
+    managedAUM: aum,
+    managedAUMFormatted: formatCurrency(aum),
 
     investableAssets,
     investableAssetsFormatted: formatCurrency(investableAssets),
