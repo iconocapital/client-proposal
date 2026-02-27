@@ -26,7 +26,7 @@ export function buildDeck(config: ProspectConfig): DeckSlide[] {
   // 1. Title
   slides.push({
     component: () => React.createElement(TitleSlide, { prospect: config.prospect }),
-    name: 'Engagement Proposal',
+    name: 'Your Retirement Plan',
     template: 'title',
   });
   page++;
@@ -50,9 +50,9 @@ export function buildDeck(config: ProspectConfig): DeckSlide[] {
   // 4–N. Findings (variable number)
   config.findings.forEach((finding, i) => {
     const cardNames = finding.cards.map((c) => c.title).join(' & ');
-    const shortName = cardNames.length > 30 ? `Key Findings ${i + 1}` : cardNames;
+    const shortName = finding.slideTitle ?? (cardNames.length > 30 ? `Key Findings ${i + 1}` : cardNames);
     slides.push({
-      component: () => React.createElement(FindingsSlide, { cards: finding.cards, pageNumber: page }),
+      component: () => React.createElement(FindingsSlide, { cards: finding.cards, slideTitle: finding.slideTitle, pageNumber: page }),
       name: shortName,
       template: 'two-column',
     });

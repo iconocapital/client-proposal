@@ -11,7 +11,7 @@ const DEFAULT_PROJECT_FEATURES = [
   'Two follow-up implementation calls over 90 days',
   'Email support throughout the engagement period',
   'Full RightCapital dashboard access for 12 months',
-  'You execute all trades and account moves yourself',
+  'You stay in control of all trades and account moves',
 ];
 
 const DEFAULT_GWM_FEATURES = [
@@ -52,11 +52,11 @@ export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
           Both options deliver the same core planning work — choose the model that fits how you want to work going forward.
         </p>
 
-        <div className="flex-1 grid grid-cols-2 gap-10 min-h-0 overflow-y-auto">
+        <div className="flex-1 grid grid-cols-2 gap-10 min-h-0">
           {/* Option A: Project */}
-          <div className="rounded-xl border border-slide-gray-200 overflow-hidden flex flex-col">
+          <div className="rounded-xl border border-slide-gray-200 overflow-visible flex flex-col">
             <div className="px-8 py-5" style={{ background: 'hsl(174, 30%, 93%)' }}>
-              <h3 className="text-2xl font-bold text-slide-gray-900">Option A: Financial Planning Project</h3>
+              <h3 className="text-2xl font-bold text-slide-gray-900">Option A: Get Clarity — One Time</h3>
               <p className="text-base" style={{ color: 'hsl(174, 42%, 43%)' }}>One-time engagement • ~90 days</p>
             </div>
             <div className="px-8 py-5 flex-1">
@@ -82,12 +82,12 @@ export function OptionsSlide({ pricing, prospectName, pageNumber }: Props) {
 
           {/* Option B: GWM */}
           <div
-            className="rounded-xl border-2 overflow-hidden flex flex-col"
+            className="rounded-xl border-2 overflow-visible flex flex-col"
             style={{ borderColor: 'hsl(180, 38%, 30%)' }}
           >
             <div className="px-8 py-5" style={{ background: 'hsl(180, 38%, 30%)' }}>
               <h3 className="text-2xl font-bold text-white">
-                Option B: {p.gwmTierLabel}
+                Option B: Have a Partner — Every Year
               </h3>
               <p className="text-base text-white/80">Ongoing annual relationship</p>
             </div>

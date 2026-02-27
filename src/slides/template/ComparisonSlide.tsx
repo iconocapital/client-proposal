@@ -28,20 +28,26 @@ export function ComparisonSlide({ comparison, pricing, pageNumber }: Props) {
         </h2>
         <div className="slide-divider mb-8" />
 
-        <div className="flex-1 min-h-0 overflow-y-auto">
+        <div
+          className="flex-1 min-h-0 overflow-y-auto relative"
+          style={{
+            maskImage: 'linear-gradient(to bottom, black 92%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 92%, transparent 100%)',
+          }}
+        >
           <table className="w-full">
-            <thead>
+            <thead className="sticky top-0 z-10" style={{ background: '#FCFBF8' }}>
               <tr>
                 <th className="text-left text-lg font-semibold text-slide-gray-600 pb-3 w-[55%]"></th>
                 <th className="text-center text-lg font-bold text-slide-gray-900 pb-3 w-[22%]">
-                  Project<br />
+                  Get Clarity<br />
                   <span className="text-base font-normal text-slide-gray-400">{p.projectFeeFormatted}</span>
                 </th>
                 <th
                   className="text-center text-lg font-bold pb-3 w-[23%]"
                   style={{ color: 'hsl(180, 38%, 30%)' }}
                 >
-                  {p.gwmTierLabel.replace('GWM ', '')}<br />
+                  Have a Partner<br />
                   <span className="text-base font-normal" style={{ color: 'hsl(174, 42%, 43%)' }}>
                     {p.gwmYear1Waived ? (
                       <>
